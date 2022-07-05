@@ -23,7 +23,15 @@ const HeroBanner = () => {
             Check out the most effective exercises <br /> for callusing your mind
         </Typography>
 
-        <Button variant="contained" color="error" href="#exercises" sx={{ backgroundColor: '#ff2625', padding: '10px'}}>Explore Exercises</Button>
+        <Button 
+        variant="contained" 
+        color="error" 
+        href="#exercises" 
+        sx={{ backgroundColor: '#ff2625', padding: '10px'}}
+        >
+            Explore Exercises
+        </Button>
+        
         <img src={HeroBannerImage} alt="banner" className="hero-banner-img" style={{zIndex:1}}/>
 
         <Typography 
