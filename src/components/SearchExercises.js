@@ -36,12 +36,13 @@ const SearchExercises = ({ setExercises, setBodyPart, bodyPart }) => {
   }
 
   return (
-    <Stack alignItems="center" mt="75px" justifyContent="center" p="20px">
+    <Stack id="search-exercises" alignItems="center" mt="150px" justifyContent="center" p="20px">
       <Typography fontWeight="700" sx={{ fontSize: { lg: '44px', xs: '30px' }}} mb="25px" textAlign="center">
         Awesome and Effective <br /> 
         Exercises You Should Know
       </Typography>
 
+      {/* EXERCISE HORIZONTAL SCROLLBAR (Back, Cardo, etc) */}
       <Box sx={{ position: 'relative', width: '100%', p: '20px' }}>
           <HorizontalScrollbar data={bodyParts} bodyPart={bodyPart} setBodyPart={setBodyPart} />
       </Box>
