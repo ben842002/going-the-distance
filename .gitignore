@@ -6,7 +6,10 @@
 .pnp.js
 
 .env
+
+# notes/plans
 notes.txt
+to-do-tasks.txt
 
 # testing
 /coverage
