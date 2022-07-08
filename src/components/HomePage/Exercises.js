@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Stack, Typography } from '@mui/material';
 
-import { fetchData, exerciseOptions } from '../utils/fetchData';
-import ExerciseCard from './ExerciseCard';
-import ExercisePagination from './ExercisePagination';
+import { fetchData, exerciseOptions } from '../../utils/fetchData';
+import ExerciseCard from '../ExerciseCard';
+import ExercisePagination from '../ExercisePagination';
 
 
 const Exercises = ({ exercises, setExercises, bodyPart }) => {
