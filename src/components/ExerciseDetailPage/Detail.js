@@ -26,13 +26,13 @@ const Detail = ({ exerciseDetail }) => {
       <img src={gifUrl} alt={name} loading="lazy" className="detail-image" /> 
 
       <Stack sx={{ gap: { lg: '35px', xs: '20px'}}}>
-        <Typography variant="h3" fontWeight="600" textTransform="capitalize">
+        <Typography variant="h3" fontWeight="600" textTransform="capitalize" color='#ff2625'> 
           {name}
         </Typography>
         
         <Typography variant="h6">
           Exercises keep you healthy and strong. <b>{name}</b> is one of the best exercises to target your <b>{target}</b>.
-          It will help you improve your mood and gain energy.
+          It will help you improve your mood and gain energy!
         </Typography>
 
         {extraDetail.map((item, index) => (
