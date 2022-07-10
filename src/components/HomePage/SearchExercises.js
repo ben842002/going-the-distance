@@ -17,18 +17,33 @@ const SearchExercises = ({ setExercises, setBodyPart, bodyPart }) => {
     fetchExercisesData();
   }, []);
 
+  useEffect(() => {
+    
+  })
+
   // When user clicks on the Search button after inputting something into the search bar
   const handleSearch = async () => {
     if (search) {
-      const exercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises', exerciseOptions);
+      // remove special characters and spaces (using Regex)
+      const filteredSearch = search.replace(/[^A-Z]+/ig, "");
 
+      const exercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises', exerciseOptions);
+      
       // encompass multiple ways user searches for something. Object attribute names are given in the fetched data
-      const searchedExercises = exercisesData.filter((exercise) => 
-        exercise.name.toLowerCase().includes(search) 
-        || exercise.target.toLowerCase().includes(search) 
-        || exercise.bodyPart.toLowerCase().includes(search) 
-        || exercise.equipment.toLowerCase().includes(search) 
-      );
+      const searchedExercises = exercisesData.filter((exercise) => {
+        // remove any special characters and spaces so we can maximize search matching
+        const filterName = exercise.name.toLowerCase().replace(/[^A-Z]+/ig, "");
+        const filterTarget = exercise.target.toLowerCase().replace(/[^A-Z]+/ig, "");
+        const filterBodyPart = exercise.bodyPart.toLowerCase().replace(/[^A-Z]+/ig, "");
+        const filterEquipment = exercise.equipment.toLowerCase().replace(/[^A-Z]+/ig, "");
+
+        // these return true or false, if it is true, append current exercise object
+        return (filterName.includes(filteredSearch)
+        || filterTarget.includes(filteredSearch) 
+        || filterBodyPart.includes(filteredSearch)
+        || filterEquipment.includes(filteredSearch)
+       );
+      });
 
       setSearch(""); // clear search box
       setExercises(searchedExercises);
