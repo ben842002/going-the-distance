@@ -33,6 +33,7 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
         exercisesData = await fetchData(`https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}`, exerciseOptions);
       }
 
+      setCurrentPage(1); // reset to page one every time we switch to a new set of bodyCards
       setExercises(exercisesData);
     }
 
