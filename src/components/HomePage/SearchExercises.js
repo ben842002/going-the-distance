@@ -21,15 +21,15 @@ const SearchExercises = ({ setExercises, setBodyPart, bodyPart }) => {
   const handleSearch = async () => {
     if (search) {
       const exercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises', exerciseOptions);
-      // console.log(exercisesData);
 
       // encompass multiple ways user searches for something. Object attribute names are given in the fetched data
-      const searchedExercises = exercisesData.filter((exercise) => exercise.name.toLowerCase().includes(search) 
+      const searchedExercises = exercisesData.filter((exercise) => 
+        exercise.name.toLowerCase().includes(search) 
         || exercise.target.toLowerCase().includes(search) 
         || exercise.bodyPart.toLowerCase().includes(search) 
         || exercise.equipment.toLowerCase().includes(search) 
       );
-      
+
       setSearch(""); // clear search box
       setExercises(searchedExercises);
     }

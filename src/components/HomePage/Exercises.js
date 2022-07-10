@@ -62,10 +62,16 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
       sx={{ gap: { lg: '110px', xs: '50px'}}}
       flexWrap="wrap"
       justifyContent="center"
-      >
-        {currentExercises.map((exercise, index) => (
+      > 
+        {/* Display exercises or "No Results Found" text */}
+        { currentExercises.length !== 0 ? currentExercises.map((exercise, index) => (
           <ExerciseCard key={index} exercise={exercise} />
-        ))}
+        )) 
+        : 
+        <Typography variant="h5">
+          No Results Found
+        </Typography>     
+        }
       </Stack>
 
       <ExercisePagination 
