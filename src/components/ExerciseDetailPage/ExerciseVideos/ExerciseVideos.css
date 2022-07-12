@@ -1,6 +1,5 @@
 @media only screen and (max-width: 1200px) {
     .exercise-video { 
-        display: inline-block;
         margin-bottom: 160px;
     }
 }
