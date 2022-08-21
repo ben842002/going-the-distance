@@ -17,10 +17,6 @@ const SearchExercises = ({ setExercises, setBodyPart, bodyPart }) => {
     fetchExercisesData();
   }, []);
 
-  useEffect(() => {
-    
-  })
-
   // When user clicks on the Search button after inputting something into the search bar
   const handleSearch = async () => {
     if (search) {
