@@ -1,21 +1,24 @@
 import React from 'react'
 import { Box, Typography, Button } from '@mui/material';
+import CurrentTime from './CurrentTime';
 import HeroBannerImage from '../../assets/images/davidgoggins.webp';
 
 const HeroBanner = () => {
   return (
     <Box 
-    sx={{
-        mt: { lg: '212px', xs: '70px'},
-        ml: { sm: '50px' }
-    }} 
-    position="relative" p="20px"
-    >
-        <Typography color="#FF2625" fontWeight="600" fontSize="26px">
+        sx={{
+            mt: { lg: '212px', xs: '70px'},
+            ml: { sm: '50px' }
+        }} 
+        position="relative" p="20px"
+    >   
+        <CurrentTime />
+
+        <Typography color="#FF2625" fontWeight="600" fontSize="30px">
             Going The Distance
         </Typography>
 
-        <Typography fontWeight="700" sx={{ fontSize: { lg: '44px', xs: '40px' }}} mb="23px" mt="15px">
+        <Typography fontWeight="700" sx={{ fontSize: { lg: '44px', xs: '40px' }}} mb="20px" mt="5px">
             Wake Up, Get After It, <br /> and Repeat
         </Typography>
 
@@ -24,10 +27,10 @@ const HeroBanner = () => {
         </Typography>
 
         <Button 
-        variant="contained" 
-        color="error" 
-        href="#search-exercises" 
-        sx={{ backgroundColor: '#ff2625', padding: '10px'}}
+            variant="contained" 
+            color="error" 
+            href="#search-exercises" 
+            sx={{ backgroundColor: '#ff2625', padding: '10px'}}
         >
             Explore Exercises
         </Button>
