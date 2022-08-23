@@ -1,11 +1,11 @@
 import React from 'react';
-import { Box, Stack, Typography } from '@mui/material';
+import { Box, Link, Stack, Typography } from '@mui/material';
 import Logo from '../assets/images/Logo.png';
 
 const Footer = () => {
   return (
     <Box mt="80px" bgcolor="#fff3f4">
-      <Stack gap="40px" alignItems="center" px="40px" pt="40px">
+      <Stack gap="40px" alignItems="center" px="40px" pt="40px"> 
         <Stack direction="row" alignItems="center">
           <img src={Logo} alt="logo" width="60px" height="60px" />
 
@@ -14,9 +14,22 @@ const Footer = () => {
           </Typography>
         </Stack>
         
-        <Typography variant="h5" pb="40px" mt="5px">
-          Made by Benjamin Chau
-        </Typography>
+        <Box>
+          <Typography variant="h5" mt="5px" mb="25px">
+            Made by Benjamin Chau
+          </Typography>
+
+          <Stack direction="row" pb="40px" fontSize="18px" justifyContent="space-between">
+            <Link href="https://www.linkedin.com/in/benjamin-chau/" target="_blank" underline="hover" rel="noopener">
+              LinkedIn
+            </Link>
+            
+            <Link href="https://ben842002.github.io/" target="_blank" underline="hover" rel="noopener">
+              Personal Website
+            </Link>
+          </Stack>
+        </Box>
+
       </Stack>
     </Box>
   )
